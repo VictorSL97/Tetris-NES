@@ -2,7 +2,10 @@ var loadState = {
 	preload: function(){
 		game.plugins.add(PhaserNineSlice.Plugin);
 
-		var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill:'#ffffff'});
+		var firstText = game.add.text(60, 150, 'TETRIS LICENSED TO NINTENDO', {font: '20px MartelSans', fill:'#ffffff'});
+		var firstText1 = game.add.text(60,190,'\u00A9 1989 NINTENDO',{font: '20px MartelSans', fill:'#ffffff'});
+		var firstText2 = game.add.text(50,230, 'PROGRAMMERS: ERICK, JHONE, LUCAS, VICTOR', {font: '20px MartelSans', fill: '#ffffff'});
+		//var loadingLabel = game.add.text(80,150,'TETRIS',{font: '30px Courier',fill:'#fffff'});
 		game.load.atlas('blocoatlas', 'img/blocoatlas_v3.png', 'js/blocoatlas_v2.json');
 		game.load.json('tetraminosJSON', 'js/tetraminos.json');
 		game.load.json('langs', 'js/gameTexts.json');

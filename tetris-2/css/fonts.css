@@ -1,6 +1,8 @@
 @font-face {
-	font-family :'MartelSans';
-	src: url('../fonts/martelsans-regular.otf') format('opentype');
+	/*font-family :'MartelSans';*/
+    /*src: url('../fonts/martelsans-regular.otf') format('opentype');*/
+    font-family: 'MartelSans';
+    src: url('../fonts/pixel-emulator.otf') format('opentype');
 }
 
 .fontLoader {
