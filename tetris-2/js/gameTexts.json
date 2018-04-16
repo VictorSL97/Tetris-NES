@@ -20,7 +20,7 @@
       "MainMenu": {
         "texts": [
           "Não é um jogo oficial\nFeito com Phaser.js",
-          "Novo Jogo",
+          "Play",
           "Configurações",
           "Maiores Pontuações",
           "Créditos"
