@@ -49,13 +49,15 @@ var playState = {
 					}
 				}
 			} else {
-				getInput();//justa a movimentacao da peça
+				getInput();//ajusta a movimentacao da peça
 				if(hardDrop){
+                    //enquanto a peça n para de se movimentar
 					while(testDrop()){
 						score(hardDropPts);
 						clearPiece();
 						curY++;
 						drawPiece();
+                        console.log('teste ',curY);
 					}
 					hardDrop = false;
 					hardDropped = true;
@@ -63,7 +65,7 @@ var playState = {
 				}
 				updateTickSpeed();//
 				updateBoardDisplayed();
-				updateNextWindow();
+				updateNextWindow();//
 			}
 		} else {
 			clearNextWindow();
@@ -299,8 +301,8 @@ function createTexts(){
     l = game.add.text(0, 0, getText("SinglePlayerGame", 0), labelGameStyle);
     l.setTextBounds(23, 28, 159, 23);
 
-    l = game.add.text(0, 0, getText("SinglePlayerGame", 1), labelGameStyle);
-    l.setTextBounds(463, 28, 159, 23);
+  //  l = game.add.text(0, 0, getText("SinglePlayerGame", 1), //labelGameStyle);
+   // l.setTextBounds(463, 28, 159, 23);
 
     l = game.add.text(0, 0, getText("SinglePlayerGame", 2), labelGameStyle);
     l.setTextBounds(463, 350, 159, 23);
@@ -346,7 +348,7 @@ function drawGhost(){
 		}
 	}
 }
-
+//modifica a posição da peça
 function drawPiece(){
 	drawGhost();
 	var tmpX;
