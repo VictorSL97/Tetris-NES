@@ -111,7 +111,7 @@ var softDrop;
 var hardDrop;
 var hardDropped;
 var hardDropLock;
-var cleaningLines;
+var cleaningLines;//verifica se a linha foi deletada
 var waitingLineClear;
 var holdLock;
 var lastValidMoveWasASpin;

@@ -18,10 +18,11 @@ var playState = {
 		createParticleEmitters();
 		hardDropped = false;
 		floorKicked = false;
-		startCountDown();
+		startCountDown();//Pergunta se o player está pronto
 	},
 
 	update: function(){
+        console.log(cleaningLines,' teste');
 		if(preGameCountDown){
 			//wait
 		} else if(!gameover){
@@ -48,7 +49,7 @@ var playState = {
 					}
 				}
 			} else {
-				getInput();
+				getInput();//justa a movimentacao da peça
 				if(hardDrop){
 					while(testDrop()){
 						score(hardDropPts);
@@ -60,7 +61,7 @@ var playState = {
 					hardDropped = true;
 					testTick();
 				}
-				updateTickSpeed();
+				updateTickSpeed();//
 				updateBoardDisplayed();
 				updateNextWindow();
 			}
@@ -366,10 +367,11 @@ function drawPiece(){
 function getInput(){
 	hAxis = 0;
 	//if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-		if(game.input.keyboard.isDown(userKeys[0])){
-		hAxis --;
+        //veii
+    if(game.input.keyboard.isDown(userKeys[0])){
+		hAxis --; //deslocando para a esquerda
 	} else if(game.input.keyboard.isDown(userKeys[1])){
-		hAxis++;
+		hAxis++; // deslocando para direita
 	} else {
 		unlockMovement();
 		movementDelayLock = false;
@@ -1197,7 +1199,7 @@ function updateNextWindow(){
 	var offsetX = 1;
 	var offsetY = 2;
 	clearNextWindow();
-	for(var j = 0; j < 3; j++ ){ //next piece index
+	for(var j = 0; j < 1; j++ ){ //next piece index
 		for(var i = 0; i < 4; i++){ //piece blocks
 			var blocoX = (nextPiece[j].poses[0][i][0]) + offsetX;
 			var blocoY = (nextPiece[j].poses[0][i][1]) + (offsetY + (j*4));
