@@ -28,7 +28,7 @@ var loadState = {
 		//bgs
 		bgsNames = ["img/phaser_universe_bg.png", "img/bg_PROERD.png", "img/Kremlin.png", "img/virgilio_pokemon_ghosts.png", "img/virgilio_master_sword.png","img/ratinho.png"];
 		bgsTexts = ["Phaser Universe\nby Phaser", "Proerd\nby Nestablo Ramos", "Kremlin's\nSurveillance Regime\nby Bruno Moraes", "Pokemon Ghosts\nby Virgilio Silveira", "Master Sword\nby Virgilio Silveira", "Ratinho in space\nby Caio Marchi"];
-        game.load.image('logoTetris','img/logoTetris.jpg');
+        game.load.image('logoTetris','img/logoTetris.jpeg');
     
         var bgsCount = bgsNames.length;
 		for(var i=0; i < bgsCount; i++){
