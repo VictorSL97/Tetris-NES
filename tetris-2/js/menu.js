@@ -30,7 +30,8 @@ var menuState = {
 		lblNewGame = game.add.text(game.world.width / 2, 180, getText("MainMenu", 1), buttonStyle);
 		lblNewGame.anchor.setTo(0.5, 0.5);
 
-		btnSettings = game.add.button(game.world.width / 2, 180 + 60, 'big_button', function(){show('settings')}, this, 1, 2, 0);
+		//btnSettings = game.add.button(game.world.width / 2, 180 + 60, 'big_button', function(){show('settings')}, this, 1, 2, 0);
+		btnSettings = game.add.button(game.world.width / 2, 180 + 60, 'big_button', function(){show('soundMenu')}, this, 1, 2, 0);
 		btnSettings.anchor.setTo(0.5, 0.5);
 		btnSettings.tint = buttonTint;
 		lblSettings = game.add.text(game.world.width / 2, 180 + 60, getText("MainMenu", 2), buttonStyle);
