@@ -18,10 +18,11 @@ var playState = {
 		createParticleEmitters();
 		hardDropped = false;
 		floorKicked = false;
-		startCountDown();
+		startCountDown();//Pergunta se o player está pronto
 	},
 
 	update: function(){
+        console.log(cleaningLines,' teste');
 		if(preGameCountDown){
 			//wait
 		} else if(!gameover){
@@ -48,21 +49,23 @@ var playState = {
 					}
 				}
 			} else {
-				getInput();
+				getInput();//ajusta a movimentacao da peça
 				if(hardDrop){
+                    //enquanto a peça n para de se movimentar
 					while(testDrop()){
 						score(hardDropPts);
 						clearPiece();
 						curY++;
 						drawPiece();
+                        console.log('teste ',curY);
 					}
 					hardDrop = false;
 					hardDropped = true;
 					testTick();
 				}
-				updateTickSpeed();
+				updateTickSpeed();//
 				updateBoardDisplayed();
-				updateNextWindow();
+				updateNextWindow();//
 			}
 		} else {
 			clearNextWindow();
@@ -298,8 +301,8 @@ function createTexts(){
     l = game.add.text(0, 0, getText("SinglePlayerGame", 0), labelGameStyle);
     l.setTextBounds(23, 28, 159, 23);
 
-    l = game.add.text(0, 0, getText("SinglePlayerGame", 1), labelGameStyle);
-    l.setTextBounds(463, 28, 159, 23);
+  //  l = game.add.text(0, 0, getText("SinglePlayerGame", 1), //labelGameStyle);
+   // l.setTextBounds(463, 28, 159, 23);
 
     l = game.add.text(0, 0, getText("SinglePlayerGame", 2), labelGameStyle);
     l.setTextBounds(463, 350, 159, 23);
@@ -345,7 +348,7 @@ function drawGhost(){
 		}
 	}
 }
-
+//modifica a posição da peça
 function drawPiece(){
 	drawGhost();
 	var tmpX;
@@ -366,10 +369,11 @@ function drawPiece(){
 function getInput(){
 	hAxis = 0;
 	//if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-		if(game.input.keyboard.isDown(userKeys[0])){
-		hAxis --;
+        //veii
+    if(game.input.keyboard.isDown(userKeys[0])){
+		hAxis --; //deslocando para a esquerda
 	} else if(game.input.keyboard.isDown(userKeys[1])){
-		hAxis++;
+		hAxis++; // deslocando para direita
 	} else {
 		unlockMovement();
 		movementDelayLock = false;
@@ -1197,7 +1201,7 @@ function updateNextWindow(){
 	var offsetX = 1;
 	var offsetY = 2;
 	clearNextWindow();
-	for(var j = 0; j < 3; j++ ){ //next piece index
+	for(var j = 0; j < 1; j++ ){ //next piece index
 		for(var i = 0; i < 4; i++){ //piece blocks
 			var blocoX = (nextPiece[j].poses[0][i][0]) + offsetX;
 			var blocoY = (nextPiece[j].poses[0][i][1]) + (offsetY + (j*4));

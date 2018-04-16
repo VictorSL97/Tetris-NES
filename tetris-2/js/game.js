@@ -111,7 +111,7 @@ var softDrop;
 var hardDrop;
 var hardDropped;
 var hardDropLock;
-var cleaningLines;
+var cleaningLines;//verifica se a linha foi deletada
 var waitingLineClear;
 var holdLock;
 var lastValidMoveWasASpin;
@@ -125,6 +125,7 @@ var breadCrumbs = [];
 
 game.state.add('boot', bootState);
 game.state.add('load', loadState);
+game.state.add('teste',testeState);
 game.state.add('play', playState);
 game.state.add('singlePlayerPrep', singlePlayerPrepState);
 game.state.add('menu', menuState);
