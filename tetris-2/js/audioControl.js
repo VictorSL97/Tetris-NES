@@ -37,8 +37,10 @@ function createSounds(){
 	fxMove.volume = fxVol;
 	fxHold.volume = fxVol;
 
-	trackNames = ["theme-a", "chaves"];
-	trackDesc = ["Theme-A (Acappela)\nby Smooth McGroove", "Boa Noite Vizinhanca\nby Fabio Lima"];
+	//trackNames = ["theme-a", "chaves"];
+	trackNames = ["music-1","music-2","music-3"];
+	//trackDesc = ["Theme-A (Acappela)\nby Smooth McGroove", "Boa Noite Vizinhanca\nby Fabio Lima"];
+	trackDesc = ["Music 1", "Music 2", "Music 3"];
 }
 
 function saveSoundSettings(musicVol, fxVol, track){
@@ -83,4 +85,15 @@ function prevTrack(){
 	music.destroy();
 	music = game.add.audio(trackNames[curTrack]);
 	music.loopFull(musVol);
+}
+
+function findTrack(trackName){
+	musVol = music.volume;
+	for(var i=0;i<trackNames.length;i++){
+		if(trackName == trackNames[i]){
+			music.destroy();
+			music = game.add.audio(trackNames[i]);
+			music.loopFull(musVol);
+		}
+	}
 }

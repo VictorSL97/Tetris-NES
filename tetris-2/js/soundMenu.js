@@ -6,8 +6,59 @@ var curFxVolume = 0;
 var labelInfo = 0;
 var soundMenuState = {
 	create: function(){
-		drawPatternBG("#880088", "228822");
-		buttonTint = 0x95f497;
+		//drawPatternBG("#880088", "228822");
+		drawPatternBG("#888800", "999999");
+		//buttonTint = 0x95f497;
+		buttonTint = 0xbce2f4;
+		music.stop();
+		createSounds();
+		music.loopFull(music.volume);
+		var titleLabel = game.add.text(220,80,getText("SoundMenu",0), getStyle("title"));
+		var buttonStyle = getStyle("button_regular");
+
+		btnMusic1 = game.add.button(game.world.width / 2, (game.world.height / 2) - 60, 'big_button', function(){findTrack("music-1");},this, 1, 2, 0);
+		btnMusic1.anchor.setTo(0.5, 0.5);
+		btnMusic1.tint = buttonTint;
+		lblMusic1 = game.add.text(game.world.width / 2, (game.world.height / 2) - 60, getText("SoundMenu",1) , buttonStyle);
+		lblMusic1.anchor.setTo(0.5, 0.5);
+
+		btnMusic2 = game.add.button(game.world.width / 2, (game.world.height / 2), 'big_button', function(){findTrack("music-2")},this, 1, 2, 0);
+		btnMusic2.anchor.setTo(0.5, 0.5);
+		btnMusic2.tint = buttonTint;
+		lblMusic2 = game.add.text(game.world.width / 2, (game.world.height / 2), getText("SoundMenu",2) , buttonStyle);
+		lblMusic2.anchor.setTo(0.5, 0.5);
+
+		btnMusic3 = game.add.button(game.world.width / 2, (game.world.height / 2) + 60, 'big_button', function(){nextTrack("music-3")},this, 1, 2, 0);
+		btnMusic3.anchor.setTo(0.5, 0.5);
+		btnMusic3.tint = buttonTint;
+		lblMusic3 = game.add.text(game.world.width / 2, (game.world.height / 2) + 60, getText("SoundMenu",3) , buttonStyle);
+		lblMusic3.anchor.setTo(0.5, 0.5);
+
+		btnSave = game.add.button(game.world.width / 2, (game.world.height / 2) + 120, 'big_button', saveAudioSettings,this, 1, 2, 0);
+		btnSave.anchor.setTo(0.5, 0.5);
+		btnSave.tint = buttonTint;
+		lblSave = game.add.text(game.world.width / 2, (game.world.height / 2) + 120, getText("Standard",0) , buttonStyle);
+		lblSave.anchor.setTo(0.5, 0.5);
+
+		btnCancel = game.add.button(game.world.width / 2, (game.world.height / 2) + 180, 'big_button', cancelSoundSettings,this, 1, 2, 0);
+		btnCancel.anchor.setTo(0.5, 0.5);
+		btnCancel.tint = buttonTint;
+		lblCancel = game.add.text(game.world.width / 2, (game.world.height / 2) + 180, getText("Standard",1) , buttonStyle);
+		lblCancel.anchor.setTo(0.5, 0.5);
+
+		/*btnSave = game.add.button(game.world.width / 2, (game.world.height) + 120, 'big_button', saveAudioSettings, this, 1, 2, 0);
+		btnSave.anchor.setTo(0.5,0.5);
+		btnSave.tint = buttonTint;
+		lblSave = game.add.text(game.world.width / 2, (game.world.height) + 120, getText("Standard",0), buttonStyle);
+		lblSave.anchor.setTo(0.5,0.5);*/
+
+		/*btnCancel = game.add.button(game.world.width / 2, (game.world.height) + 180, 'big_button', cancelSoundSettings, this, 1, 2, 0);
+		btnCancel.anchor.setTo(0.5,0.5);
+		btnCancel.tint = buttonTint;
+		lblCancel = game.add.text(game.world.width / 2, (game.world.height) + 180, getText("Standard",1), buttonStyle);
+		lblCancel.anchor.setTo(0.5,0.5);*/
+
+		/*
 		game.add.nineSlice(15, 210, "sliced_panel", "sliced_panel", 240, 60);
 		game.add.nineSlice(15, 310, "sliced_panel", "sliced_panel", 240, 60);
 		game.add.nineSlice(385, 210, "sliced_panel", "sliced_panel", 240, 160);
@@ -26,14 +77,14 @@ var soundMenuState = {
 		musicValue.anchor.setTo(0.5, 0.5);
 		fxValue = game.add.text(140, (game.world.height / 2) + 100, "70%", valueStyle);
 		fxValue.anchor.setTo(0.5, 0.5);
-
+		
 		//Music
 		btnMusicMinus= game.add.button( 50, (game.world.height / 2), 'button', musicMinusButton, this, 1, 2, 0);
 		btnMusicMinus.anchor.setTo(0.5, 0.5);
 		btnMusicMinus.tint = buttonTint;
 		lblMusicMinus = game.add.text(50 , (game.world.height / 2), "-", buttonStyle);
 		lblMusicMinus.anchor.setTo(0.5, 0.5);
-
+		
 		btnMusicPlus = game.add.button((game.world.width / 2) - 100, (game.world.height / 2), 'button', musicPlusButton, this, 1, 2, 0);
 		btnMusicPlus.anchor.setTo(0.5, 0.5);
 		btnMusicPlus.tint = buttonTint;
@@ -89,7 +140,7 @@ var soundMenuState = {
 		lblCancel = game.add.text(tmpX, tmpY + 4, getText("Standard", 1), saveCancelStyle);
 		lblCancel.anchor.setTo(0.5, 0.5);
 
-		updateLabels();
+		updateLabels();*/
 	}
 };
 

@@ -14,7 +14,7 @@ function initScoreSystem(){
 	//sounds
 	localStorage.setItem("musicVolume", "1.5");
 	localStorage.setItem("fxVolume", "1.5");
-	localStorage.setItem("musicTrack", "chaves");
+	localStorage.setItem("musicTrack", "music-1");
 
 	//init keys
 	keys = getDefaultUserKeys();

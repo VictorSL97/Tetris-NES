@@ -9,10 +9,10 @@
       },
       "Standard": {
         "texts": [
-          "Salvar",
-          "Cancelar",
-          "Voltar",
-          "Resetar",
+          "Save",
+          "Cancel",
+          "Back",
+          "Reset",
           "Dados Locais Apagados!",
           "Reiniciando o Jogo"
         ]
@@ -42,8 +42,11 @@
       },
       "SoundMenu": {
         "texts": [
-          "Música/Sons",
-          "Música",
+          "Music",
+          "Music 1",
+          "Music 2",
+          "Music 3",
+          "Save",
           "Efeitos Sonoros",
           "Informações da Trilha"
         ]

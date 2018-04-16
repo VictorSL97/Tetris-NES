@@ -42,6 +42,9 @@ var loadState = {
 		game.load.audio('hold', 'snd/hold.ogg');
 		game.load.audio('theme-a', 'snd/themeA.ogg');
 		game.load.audio('chaves', 'snd/chaves.ogg');
+		game.load.audio('music-1','snd/game-playing.mp3');
+		game.load.audio('music-2','snd/game-playing-2.mp3');
+		game.load.audio('music-3','snd/game-playing-3.mp3');
 		createSounds();
 		//loads data from disk
 		curBg = parseInt(localStorage.curBg);
